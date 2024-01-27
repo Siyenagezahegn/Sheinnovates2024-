@@ -13,9 +13,11 @@ if not cap.isOpened():
 while True:
     # Capture frame-by-frame
     ret, frame = cap.read()
+    mirrored_frame = cv2.flip(frame, 1)
 
     # Display the frame
-    cv2.imshow('Webcam', frame)
+    
+    cv2.imshow('Mirrored Webcam', mirrored_frame)
 
     # Break the loop when 'q' key is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
